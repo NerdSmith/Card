@@ -1,0 +1,111 @@
+body{
+    margin: 0px 0px;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #e8fffa;
+}
+* {
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    background: #007765af;
+    min-height: 84px;
+    position: fixed;
+    display: flex;
+    top:0px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    flex-direction: row;
+}
+header .Content{
+    display: flex;
+    width: 70%;
+}
+#logo{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0;
+    margin-right: auto;
+    height: 45px;
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+}
+#logo_img{
+    height: 45px;
+}
+#nav{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 0;
+    height: 30px;
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+}
+#nav a{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 28px;
+    text-align: center;
+    color: black;
+}
+.Content{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.BlockInfo{
+    width: 70%;
+    min-height: 100px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: #f1f3f3;
+}
+.BlockInfo .Content {
+    display: flex;
+    justify-content: space-between;
+}
+.BlockInfo .Content *{
+    margin: 10px 10px 10px 10px;    
+}
+.Topic {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10em;
+}
+.Project {
+    display: flex;
+    flex-direction: row;
+}
+.Project .Topic {
+    font-size: 5em;
+}
+
+footer{
+    min-height: 100px;
+    text-align: center;
+    background-color: #333333;
+    display: flex;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+}
+footer p{
+    margin: 25px auto auto;
+    min-height: 64px;
+    min-width: 540px;
+}
