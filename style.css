@@ -77,12 +77,13 @@ header .Content{
 .BlockInfo .Content *{
     margin: 10px 10px 10px 10px;    
 }
-.PawGif {
+.ImgWrapper {
     display: flex;
     align-items: center;
 }
-.PawGif img {
-    width: 100%;
+
+.Avatar {
+    border-radius: 50%;
 }
 .Topic {
     font-family: 'Oswald', sans-serif;
@@ -100,13 +101,49 @@ header .Content{
 .Project img {
     width: 100%;
 }
+.TextBlock {
+    width: 100%;
+}
+.Contact img{
+    max-width: 60px;
+}
+.ContactsBlock {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+.ContactsBlock .Topic {
+    font-size: 5em;
+}
+.ContactsBlock img {
+    width: 100%;
+}
+.ContactsBlock .ContactsLine {
+    display: flex;
+    justify-content: space-between;
+}
+.AboutBlock {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+.AboutBlock p {
+    font-size: 1.1em;
+}
+.AboutBlock .Topic {
+    font-size: 5em;
+}
+.AboutBlock img {
+    width: 100%;
+}
 .TopIndent {
     min-height: 90px;
 }
 .BotIndent {
     min-height: 100px;
 }
-
 footer{
     min-height: 80px;
     text-align: center;
