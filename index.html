@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="/imgs/logo.svg" type="image/x-icon" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Hello, wayfarer</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="Content">
+				<a href="index.html" id="logo">
+					<img id="logo_img" src="imgs/logo.svg" />
+				</a>
+				<div id="nav">
+					<a href="projects.html">Проекты</a>
+					<a>|</a>
+					<a href="contacts.html">Контакты</a>
+					<a>|</a>
+					<a href="about.html">Обо мне</a>
+				</div>
+			</div>
+		</header>
+		<div class="TopIndent"></div>
+
+		<div class="BlockInfo">
+			<div class="Content">
+				<div class="ImgWrapper">
+					<img src="imgs/Paw.gif" />
+				</div>
+				<div>
+				    <p class="Topic">Привет, путник</p>
+				    <p class="InfoLabel1"><span id="lastVisit"></span></p>
+					<p class="InfoLabel2">Скажу по секрету, но в проектах кое-что появилось)</p>
+				</div>
+
+				<div class="ImgWrapper">
+					<img src="imgs/Paw.gif" />
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="BotIndent"></div>
+		<footer class="footer">
+			<div class="Content">
+				<p>
+					Все, что есть на этом сайте - принадлежит мне. И даже не
+					думай, что-либо тырить отсюда, ведь у меня есть твой ip.
+					<br />
+					Это в интернете ты такой смелый, а вот в реальности мы
+					посмотрим, как ты запоешь, если я узнаю, что ты украл что-то
+					с этого сайта.
+				</p>
+				
+				<script>
+					function get_cookie ( cookie_name )
+					{
+					var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+					
+					if ( results )
+						return ( unescape ( results[2] ) );
+					else
+						return null;
+					}
+
+					let lastVisit = get_cookie("lastvisit");
+					let date = new Date(Date.now());
+					if (lastVisit == null) {
+
+						document.getElementById('lastVisit').innerHTML = "Добро пожаловать на сайт первый раз!"
+					}
+					else {
+						document.getElementById('lastVisit').innerHTML = "Последний визит: " + lastVisit;
+					}
+					document.cookie = "lastvisit=" + date.getDate() + "." + (date.getMonth() + 1) + "."
+					+ date.getFullYear() + " | " + date.getHours() + ":" + date.getMinutes() + "; expires=01/01/2200 00:00:00; path=/; secure";
+				</script>
+			</div>
+		</footer>
+	</body>
+</html>

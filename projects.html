@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="/imgs/logo.svg" type="image/x-icon" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Projects</title>
+		<script src="JS\jquery-3.6.0.min.js"></script>
+		<script>
+			$(document).ready(function() {
+			$('a.Btn').click( function(event){
+			  event.preventDefault();
+			  $('#myOverlay').fadeIn(297,	function(){
+				$('#myModal') 
+				.css('display', 'block')
+				.animate({opacity: 1}, 198);
+			  });
+			});
+		  
+			$('#myModal__close, #myOverlay').click( function(){
+			  $('#myModal').animate({opacity: 0}, 198, function(){
+				$(this).css('display', 'none');
+				$('#myOverlay').fadeOut(297);
+			  });
+			});
+		  });
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<div class="Content">
+				<a href="index.html" id="logo">
+					<img id="logo_img" src="imgs/logo.svg" />
+				</a>
+				<div id="nav">
+					<a href="projects.html">Проекты</a>
+					<a>|</a>
+					<a href="contacts.html">Контакты</a>
+					<a>|</a>
+					<a href="about.html">Обо мне</a>
+				</div>
+			</div>
+		</header>
+		<div class="TopIndent"></div>
+		
+		<div id="myOverlay"></div>
+		<div id="myModal">
+			<canvas class="display" id="display"></canvas>
+			<p><label>Snake length:</label>  <span id="snakeLength"></span></p>
+			<p><label>Game speed:</label>  <span id="gameSpeed"></span></p>
+			<p>W/A/S/D - movement</p>
+			<button class="Btn" id="startGame">Start new game</button>
+			<span id="myModal__close" class="close">ₓ</span>
+			<script src="JS\snake_game.js"></script>
+			<script>
+				function statRender() {  
+				document.getElementById('snakeLength').innerHTML = snake.sections.length;
+				document.getElementById('gameSpeed').innerHTML = gameSpeed;
+				}
+
+				async function main() {
+				let viewPort = document.getElementById('display');
+				let startButton = document.getElementById('startGame');
+				
+				startButton.onclick = function() {
+					initGame(viewPort);
+					startGame(statRender);
+				}
+				
+				let overlay = document.getElementById('myOverlay');
+				let modal_close = document.getElementById('myModal__close');
+				
+				overlay.onclick = function() {
+					pauseGame();
+				}
+				modal_close.onclick = function() {
+					pauseGame();
+				}
+				}
+				main();
+			</script>
+			
+		</div>
+
+
+
+		<div class="BlockInfo">
+			<div class="Content">
+				<div class="Project">
+					<div class="TextBlock">
+						<p class="Topic">Игра Змейка</p>
+						<p>
+							&nbsp;&nbsp;&nbsp;&nbsp;Игра "Змейка" - нестареющая классика.
+							Вы должны управлять длинным тонким существом, напоминающим змею, 
+							которое ползает по плоскости (как правило, ограниченной стенками), 
+							собирая еду (или другие предметы), избегая столкновения с собственным
+							 хвостом и краями игрового поля.
+						</p>
+						<p>Плюсы:</p>
+						<ul>
+							<li>Работает</li>
+							<li>Прикольно, весело</li>
+							<li>Классика</li>
+						</ul>
+						<p>Минусы:</p>
+						<ul>
+							<li>Да какие минусы, это змейка</li>
+						</ul>
+						<a class="Btn" id="tryBtn" href="#">Попробовать</a>
+						<script>
+						let tryBtn = document.getElementById("tryBtn");
+
+						tryBtn.onclick = function() {
+						resumeGame();
+						}
+						</script>
+					</div>
+					<img src="imgs/snake_game.png" />
+				</div>
+			</div>
+		</div>
+
+
+		<div class="BlockInfo">
+			<div class="Content">
+				<div class="Project">
+					<div class="TextBlock">
+						<p class="Topic">Discord music bot</p>
+						<p>
+							&nbsp;&nbsp;&nbsp;&nbsp;Leviy Botinok - совершенно
+							бесплатный в использовании музыкальный бот для
+							Discord. Как и другие, он обеспечивает
+							высококачественное воспроизведение музыки, которую
+							можно извлечь из YouTube. Вы можете использовать
+							либо автоматический поиск, либо ручной поиск, чтобы
+							найти нужную музыку. 
+						</p>
+						<p>Плюсы:</p>
+						<ul>
+							<li>Работает</li>
+							<li>Ручной/Автоматический поиск трека</li>
+							<li>Просмотр очереди воспроизведения</li>
+						</ul>
+						<p>Минусы:</p>
+						<ul>
+							<li>Не обнаружено</li>
+						</ul>
+					</div>
+					<img src="imgs/discord_music_bot.png" />
+				</div>
+			</div>
+		</div>
+		 
+		<div class="BlockInfo">
+			<div class="Content">
+				<div class="Project">
+					<img src="imgs/song_recogniser.png" />
+					<div class="TextBlock">
+						<p class="Topic">Song Recogniser</p>
+						<p>
+							&nbsp;&nbsp;&nbsp;&nbsp;Единственное в своем роде
+							десктопное приложение для распознавания музыки.
+							Прослушивание этой самой музыки можно вести с
+							помощью микрофона или прямиком из системы (используя
+							loopback мод windows). 
+						</p>
+						<p>Плюсы:</p>
+						<ul>
+							<li>Работает</li>
+							<li>Доступен выбор источника звука</li>
+						</ul>
+						<p>Минусы:</p>
+						<ul>
+							<li>Приложение привязано к системе Windows</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="BotIndent"></div>
+		<footer class="footer">
+			<div class="Content">
+				<p>
+					Все, что есть на этом сайте - принадлежит мне. И даже не
+					думай, что-либо тырить отсюда, ведь у меня есть твой ip.
+					<br />
+					Это в интернете ты такой смелый, а вот в реальности мы
+					посмотрим, как ты запоешь, если я узнаю, что ты украл что-то
+					с этого сайта.
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
